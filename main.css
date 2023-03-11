@@ -22,7 +22,21 @@ footer {
     font-style: italic;
 }
 
-a{
+a {
     color: rgb(3, 193, 101);
     text-decoration: none;
+}
+a:visited{
+    color: blue;
+    background-color: green;
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
+    background-color: white;
+    font-weight: bold;
+}
+a:active {
+    color: white;
+    background-color: green;
 }
