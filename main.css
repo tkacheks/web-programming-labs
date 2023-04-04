@@ -3,6 +3,7 @@ body {
     color: rgb(16, 13, 13);
     font-family: arial;
     margin: 0px;
+    
 
 }
 
@@ -60,7 +61,9 @@ a:hover {
     text-decoration: underline;
     background-color: white;
     font-weight: bold;
-    transition: 900ms 0.3s
+    transition: 900ms 0.3s;
+    
+    
 }
 a:active {
     color: white;
