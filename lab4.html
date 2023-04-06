@@ -14,36 +14,90 @@
             border-radius: 7px;
             padding: 7px;
             width: 500px;
-            height: 120px;
+            height: 150px;
             overflow-y: auto;
             overflow-x: hidden;
             position: relative;
             background: aliceblue;
-            z-index: 1;
+            z-index: 2;
         }
         .second {
-            z-index:1;
-            left: 380px;
+            z-index: 1;
+            left: 420px;
             top: 120px;
             position: fixed;
         }
         .second:hover {
-            top:-20px;
-            position: fixed;   
+            z-index: 6;  
 
+        }
+
+        .three{
+            left:620px;
+            top:-450px;
+            height:400px;
+            width: 45%;
+            overflow: hidden;
+        }
+        .kartinka1 {
+            border-radius:100%;
+            border: 1px dashed rgb(62, 13, 239) ;
+            width: 20px;
+            height: 10px;
+            left:930px;
+            top:-660px;
+            background-color: rgb(162, 203, 242);
+            box-shadow: 5px 5px 3px rgb(148, 200, 229);
+            
+        }
+        .kartinka2{
+            border-radius:100%;
+            border: 1px dashed rgb(62, 13, 239) ;
+            width: 40px;
+            height: 20px;
+            left:960px;
+            top:-735px;
+            background-color: rgb(162, 203, 242);
+            box-shadow: 5px 5px 3px rgb(148, 200, 229);
+        }
+        .kartinka3{
+            border-radius:100%;
+            border: 1px dashed rgb(62, 13, 239) ;
+            width: 70px;
+            height: 35px;
+            left:1010px;
+            top:-830px;
+            background-color: rgb(162, 203, 242);
+            box-shadow: 5px 5px 3px rgb(148, 200, 229);
+        }
+        .kartinka4{
+            border-radius:100%;
+            border: 1px dashed rgb(62, 13, 239) ;
+            width: 100px;
+            height: 50px;
+            left:1060px;
+            top:-960px;
+            background-color: rgb(162, 203, 242);
+            text-align: center;
+            color: rgb(202, 40, 35);
+            font-size: 35px;
+            box-shadow: 5px 5px 3px rgb(148, 200, 229);
         }
         aside {
             position: absolute;
             left:0;
             width: 300px;
             background:black;
-            color:brown
+            color:brown;
+            overflow: auto;
+            height: 200%;
             
         }
         aside div {
             color:white;
             padding:10px;
             text-align: justify;
+            text-indent: 20px;
 
         }
         main {
@@ -111,6 +165,15 @@
             666 акций? Как избирают Чубайса? Почему Уоррен Баффет не делает сплиты? Что андеррайтеры называют красной селёдкой и чем они похожи на 
             организаторов концерта Стаса Михайлова? Все эти тайны будут раскрыты.
         </div>
+
+        <div class="three">
+            <img src="kartinka.jpg.png">
+        </div>
+
+        <div class="kartinka1"> </div> 
+        <div class="kartinka2"> </div>
+        <div class="kartinka3"> </div>
+        <div class="kartinka4">  Вау!</div>
     </main>
 
     <footer>
