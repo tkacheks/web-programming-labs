@@ -21,6 +21,31 @@
         alert (author);
         
     }
+    function showDiff(){
+        let inputA=document.getElementById('numberA');
+        let inputB=document.getElementById('numberB');
+        let a= parseInt(inputA.value);
+        let b= parseInt(inputB.value);
+        let result= a-b;
+        alert (' Здравствуйте! \n Разность' +  a  +' и ' +  b  +' равна' + result);
+    }
+    function showk() {
+        let inputA=document.getElementById('numberA');
+        let inputB=document.getElementById('numberB');
+        let a= parseInt(inputA.value);
+        let b= parseInt(inputB.value);
+        let result= a*b;
+        alert (' Здравствуйте! \n Произведение' +  a  +' и ' +  b  +' равно' + result);
+    }
+    function showd(){
+        let inputA=document.getElementById('numberA');
+        let inputB=document.getElementById('numberB');
+        let a= parseInt(inputA.value);
+        let b= parseInt(inputB.value);
+        let result= a/b;
+        alert (' Здравствуйте! \n Частное' +  a  +' и ' +  b  +' равно' + result);
+    }
+    
 </script>
 <style>
     .message {
@@ -51,6 +76,9 @@
         <div class="message" onclick="showSum()"> Найти сумму чисел </div>
 
         <div class="message" onclick="showAuthor ()"> Узнать, кто авторы страницы </div>
+        <div class="message" onclick="showDiff()"> Найти разность чисел </div>
+        <div class="message" onclick="showk()"> Найти произведение чисел </div>
+        <div class="message" onclick="showd()"> Найти частное чисел </div>
     </main>
 
     <footer onclick="showAuthor()">
