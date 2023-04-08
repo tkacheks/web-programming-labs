@@ -25,7 +25,9 @@ header:active {
     transition: 200ms 1s
 }
 
-
+main {
+    margin: 10px 20px;
+}
 footer {
     background: linear-gradient(to right , red,orange,yellow,green, rgb(0, 247, 255), blue, violet );
     color: rgb(0, 255, 187);
@@ -33,11 +35,16 @@ footer {
     font-size: 10pt;
     text-align: right;
     font-style: italic;
+    position:fixed;
+    left:0;
+    bottom:0;
+    right:0;
 }
 footer:hover {
     color: blue;
     font-size: 20pt;
-    transition: 600ms 1s
+    transition: 600ms 1s;
+    
 }
 footer:active {
     color: rgb(255, 0, 230);
