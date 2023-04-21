@@ -52,6 +52,22 @@
         output.style.color= textColor;
         output.style.border=border; 
     }
+    function showTotal() {
+            let inputA = document.getElementById('numbA');
+            let inputB = document.getElementById('numbB');
+            let inputC = document.getElementById('numbC');
+            let inputD = document.getElementById('numbD');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+
+            let result = (a*100 + b*80 + c*150 + d*300);
+
+            let q = document.getElementById('output2')
+            q.innerHTML =  'Итого: ' + result 
+        }
     
 </script>
     <style>
@@ -72,8 +88,8 @@
             height:40px;
         }
         .second{
-            width:300px;
-            height: 300px;
+            width:250px;
+            height: 400px;
             background-color: rgb(232, 234, 236);
             border: 2px solid rgb(243, 15, 15);
             border-radius: 7px;
@@ -81,11 +97,15 @@
             margin:30px;
             padding:15px;
             cursor: pointer;
-            text-align: center;
             font-weight: bold;
             color:red;
             font-size: 20px;
 
+        }
+        #output2 {
+            border: 1px solid;
+            width: 250px;
+            height: 40px;
         }
     </style>
 
@@ -112,9 +132,21 @@
             <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'white', 'red', 'dashed')">
         </div>
         <div id="output"></div>
-        <label> Яблоки (100 руб/шт)  <br> <input type="number" value="1" id="numberA"></label><br>
-        <div class="second"> Корзина товаров </div>
-    </main>
+        <div class="second"> 
+            <div style="font-size: 20px; font-weight: 10px; margin: 10px; margin-left: 45px;">Корзина товаров</div>
+            <div>Яблоки(100р/шт):</div>
+            <div><input type="number" value="0" id="numbA"></div>
+            <div>Груши(80р/шт)</div>
+            <div><input type="number" value="0" id="numbB"></div>
+            <div>Апельсины(150р/шт)</div>
+            <div><input type="number" value="0" id="numbC"></div>
+            <div>Дыни(300р/шт)</div>
+            <div><input type="number" value="0" id="numbD"></div>
+            <input type="button" value="Рассчитать" onclick=showTotal() >
+            <div id='output2'> Итого: </div>
+        </div>
+        
+        </main>
 
     <footer onclick="showAuthor()">
         &copy; Давоян Карине Горовна, Ткаченко Екатерина Игоревна, ФБИ-11, 2 курс, 2023
