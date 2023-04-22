@@ -16,6 +16,18 @@
         let result= a+b;
         alert (' Здравствуйте! \n Сумма' +  a  +' и ' +  b  +' равна' + result);
     }
+    function showb(a,b,c) {
+            alert(Math.max(a,b,c));
+     }
+     function kr(a,b,c) {
+        let k = [];
+        for (let i=1; i<c; i++){
+            let result=a+b*(c-i);
+            k[i-1]=result
+        }
+        alert(k);
+
+     }
     function showAuthor () {
         let author = ' Здравствуйте! \n Авторы страницы:\n Давоян К.Г., Ткаченко Е.И.';
         alert (author);
@@ -142,12 +154,14 @@
     <main>
         <label> Первое число: <input type="number" value="5154" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        <label>Третье число: <input type="number" value="7891" id="numberС"></label><br>
         <div class="message" onclick="showSum()"> Найти сумму чисел </div>
 
         <div class="message" onclick="showAuthor ()"> Узнать, кто авторы страницы </div>
         <div class="message" onclick="showDiff()"> Найти разность чисел </div>
         <div class="message" onclick="showk()"> Найти произведение чисел </div>
         <div class="message" onclick="showd()"> Найти частное чисел </div>
+        <div class="message" onclick="showb()"> Найти max </div>
         <div>
             <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'white', 'blue', 'dashed')">
             <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'white', 'orange', 'dashed')">
@@ -178,7 +192,8 @@
         <div class="cicle" style="background-color: #fd067d;" onclick="three(this)"> 8 </div>
         <div class="cicle" style="background-color: #13c1e8;" onclick="three(this)"> 9 </div>
         <div class="cicle" style="background-color: #dcf219;" onclick="three(this)"> 10 </div>
-        
+        <div onclick="showb(50,30,20)">abc </div>
+        <div onclick="kr(50,30,20)">abc </div>
         </main>
 
     <footer onclick="showAuthor()">
