@@ -25,6 +25,16 @@
             text-align: center;
 
         }
+        .color {
+            border: rgb(3, 95, 29) 2px solid;
+            border-radius: 10px;
+            width: 400px;
+            margin:30px auto;
+            padding:15px;
+            text-align: center;
+            background-color: green;
+            color:black;
+        }
         
         
     </style>
@@ -75,6 +85,33 @@
             divrules[1].style.display='none';
             divrules[0].style.display='block';
         }
+        function changeColor(div) {
+            if(div.style.backgroundColor =='green'){
+                div.style.backgroundColor ='red';
+                div.style.color ='white';
+                document.getElementById('color-name').innerHTML='красный';
+            }
+            else if(div.style.backgroundColor =='red'){
+                div.style.backgroundColor ='black';
+                div.style.color ='white';
+                document.getElementById('color-name').innerHTML='черный';
+            }
+            else if(div.style.backgroundColor =='black'){
+                div.style.backgroundColor ='yellow';
+                div.style.color ='black';
+                document.getElementById('color-name').innerHTML='желтый';
+            }
+            else if(div.style.backgroundColor =='yellow'){
+                div.style.backgroundColor ='violet';
+                div.style.color ='white';
+                document.getElementById('color-name').innerHTML='фиолетовый';
+            }
+            else {
+                div.style.backgroundColor ='green';
+                div.style.color ='black';
+                document.getElementById('color-name').innerHTML='зеленый';
+            }
+        }
 
        
        
@@ -124,6 +161,10 @@
                 <li>Проверить себя</li>
                 <li>Попробовать еще раз</li>
             </ol>
+        </div>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name"> зеленый</span><br>
+            Сделайте двойной щелчок,чтобы сменить.
         </div>
     </div>
  </main>
