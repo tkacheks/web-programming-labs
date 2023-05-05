@@ -7,6 +7,15 @@
     <title>Давоян Карине Горовна. Лабораторная 6</title>
     <link rel="stylesheet" href="main.css">
     <style>
+
+        .rules {
+            border: rgb(3, 95, 29) 2px solid;
+            border-radius: 20px;
+            width: 400px;
+            margin:30px auto;
+            padding:15px;
+            text-align: center;
+        }
         .game {
             border: rgb(3, 95, 29) 2px solid;
             border-radius: 20px;
@@ -17,6 +26,7 @@
 
         }
         
+        
     </style>
     <script>
         let number;
@@ -26,6 +36,7 @@
             let screens=document.getElementsByClassName('game');
             screens[0].style.display = 'none';
             screens[1].style.display = 'block';
+           
         }
         function guess() {
             count++;
@@ -54,6 +65,18 @@
             screens[1].style.display = "block";
 
         }
+        function showRules() {
+            let divrules = document.getElementsByClassName('rules');
+            divrules[0].style.display='none';
+            divrules[1].style.display='block';
+        }
+        function closeRules() {
+            divrules = document.getElementsByClassName('rules');
+            divrules[1].style.display='none';
+            divrules[0].style.display='block';
+        }
+
+       
        
     </script>
 </head>
@@ -88,7 +111,22 @@
                  <button onclick="again()">Сыграть еще раз</button>
             </div>
         </div>
-    </main>
+        <br>
+        <div class="rules">
+            <button onclick="showRules()">Показать правила игры</button>
+        </div>
+        <div class="rules"style="display: none; height: 265px; color:black">
+            <button onclick="closeRules()">Скрыть правила игры</button>
+            <ol>
+                <li>Тщательно подготовиться к игре</li>
+                <li>Выбрать число</li>
+                <li>Нажать на кнопку угадать</li>
+                <li>Проверить себя</li>
+                <li>Попробовать еще раз</li>
+            </ol>
+        </div>
+    </div>
+ </main>
     <footer>
         &copy; Давоян Карине Горовна, ФБИ-11, 2 курс, 2023
     </footer>
