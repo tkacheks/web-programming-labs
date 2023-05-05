@@ -35,6 +35,19 @@
             background-color: green;
             color:black;
         }
+        .guad {
+            width: 150px;
+            height: 150px;
+            border: 3px white solid;
+            position: relative;
+            background-color: rgb(23, 191, 221);
+            color: black;
+            transition: 3s;
+            cursor:pointer;
+            line-height: 130px;
+            text-align: center;
+
+        }
         
         
     </style>
@@ -112,6 +125,20 @@
                 document.getElementById('color-name').innerHTML='зеленый';
             }
         }
+        let positionLeft = true;
+        function right() {
+            let position = document.getElementById('block');
+            if (positionLeft == true) {
+                position.style.transform = 'translateX(1000px) rotate(0)';
+                positionLeft = false;
+            }
+            else {
+                position.style.transform = 'translateX(0px) rotate(4turn)';
+                positionLeft = true;
+            }
+        }
+             
+        
 
        
        
@@ -166,6 +193,7 @@
             Цвет: <span id="color-name"> зеленый</span><br>
             Сделайте двойной щелчок,чтобы сменить.
         </div>
+        <div class="guad" id="block" ondblclick="right()"> Щелкни меня </div>
     </div>
  </main>
     <footer>
