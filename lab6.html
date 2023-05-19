@@ -48,6 +48,21 @@
             text-align: center;
 
         }
+        #block2 {
+            border: 3px gray solid;
+            width: 100px;
+            height: 71px;
+            color: white;
+            text-align: center;
+            margin: 35px;
+            padding: 8px;
+            background-color: rgb(67, 123, 236);
+            padding-bottom: 0px;
+            transition: 1s;
+        }
+        #block2:hover {
+            cursor: pointer;
+        }
         
         
     </style>
@@ -139,6 +154,19 @@
                 positionLeft = true;
             }
         }
+        let widthbig = 100
+        function big() {
+            let block2 = document.getElementById('block2');
+            let sizeWidth = parseInt(block2.style.width);
+        if (sizeWidth < 1000) {
+            sizeWidth += 50;
+            }
+        else {
+            sizeWidth = 100;
+            }
+        block2.style.width = sizeWidth + 'px';
+        }
+        
              
         
 
@@ -196,6 +224,7 @@
             Сделайте двойной щелчок,чтобы сменить.
         </div>
         <div class="guad" id="block" ondblclick="right()"> Щелкни меня </div>
+        <div id="block2" onclick="big()"> нажми, чтобы я стал шире</div>
     </div>
  </main>
     <footer>
