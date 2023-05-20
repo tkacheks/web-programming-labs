@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Давоян Карине Горовна. Лабораторная 6</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+
+        .rules {
+            border: rgb(3, 95, 29) 2px solid;
+            border-radius: 20px;
+            width: 400px;
+            margin:30px auto;
+            padding:15px;
+            text-align: center;
+        }
+        .game {
+            border: rgb(3, 95, 29) 2px solid;
+            border-radius: 20px;
+            width: 400px;
+            margin:30px auto;
+            padding:15px;
+            text-align: center;
+
+        }
+        .color {
+            border: rgb(3, 95, 29) 2px solid;
+            border-radius: 10px;
+            width: 400px;
+            margin:30px auto;
+            padding:15px;
+            text-align: center;
+            background-color: green;
+            color:black;
+        }
+        .guad {
+            width: 150px;
+            height: 150px;
+            border: 3px white solid;
+            position: relative;
+            background-color: rgb(23, 191, 221);
+            color: black;
+            transition: 3s;
+            cursor:pointer;
+            line-height: 130px;
+            text-align: center;
+
+        }
+        #block2 {
+            border: 3px gray solid;
+            width: 100px;
+            height: 71px;
+            color: white;
+            text-align: center;
+            margin: 35px;
+            padding: 8px;
+            background-color: rgb(67, 123, 236);
+            padding-bottom: 0px;
+            transition: 1s;
+        }
+        #block2:hover {
+            cursor: pointer;
+        }
+        
+        
+    </style>
+    <script>
+        let number;
+        let count=0;
+        function startGame() {
+            number = Math.floor(Math.random()*100)+1;
+            let screens=document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+           
+        }
+        function guess() {
+            count++;
+            let input=document.getElementById('user-number');
+            let userNumber =parseInt(input.value);
+            let message=document.getElementById ('result');
+            if (userNumber > number) {
+                message.innerHTML="Вы ввели слишком большое число";
+            }
+            else if (userNumber < number){
+                message.innerHTML="Вы ввели слишком маленькое число";
+            }
+            else {
+                let screens=document.getElementsByClassName ('game');
+                screens[1].style.display="none";
+                screens[2].style.display="block";
+                document.getElementById("number").innerHTML = number;
+                document.getElementById("try-count").innerHTML = count;
+            }
+        }
+        function again(params) {
+            count = 0;
+            number = Math.floor( Math.random() * 100 ) + 1;
+            let screens = document.getElementsByClassName("game");
+            screens[2].style.display = "none";
+            screens[1].style.display = "block";
+            remove ('result');
+            
+
+        }
+        function showRules() {
+            let divrules = document.getElementsByClassName('rules');
+            divrules[0].style.display='none';
+            divrules[1].style.display='block';
+        }
+        function closeRules() {
+            divrules = document.getElementsByClassName('rules');
+            divrules[1].style.display='none';
+            divrules[0].style.display='block';
+        }
+        function changeColor(div) {
+            if(div.style.backgroundColor =='green'){
+                div.style.backgroundColor ='red';
+                div.style.color ='white';
+                document.getElementById('color-name').innerHTML='красный';
+            }
+            else if(div.style.backgroundColor =='red'){
+                div.style.backgroundColor ='black';
+                div.style.color ='white';
+                document.getElementById('color-name').innerHTML='черный';
+            }
+            else if(div.style.backgroundColor =='black'){
+                div.style.backgroundColor ='yellow';
+                div.style.color ='black';
+                document.getElementById('color-name').innerHTML='желтый';
+            }
+            else if(div.style.backgroundColor =='yellow'){
+                div.style.backgroundColor ='violet';
+                div.style.color ='white';
+                document.getElementById('color-name').innerHTML='фиолетовый';
+            }
+            else {
+                div.style.backgroundColor ='green';
+                div.style.color ='black';
+                document.getElementById('color-name').innerHTML='зеленый';
+            }
+        }
+        let positionLeft = true;
+        function right() {
+            let position = document.getElementById('block');
+            if (positionLeft == true) {
+                position.style.transform = 'translateX(1000px) rotate(0)';
+                positionLeft = false;
+            }
+            else {
+                position.style.transform = 'translateX(0px) rotate(4turn)';
+                positionLeft = true;
+            }
+        }
+        let widthbig = 100
+        function big() {
+            let block2 = document.getElementById('block2');
+            let sizeWidth = parseInt(block2.style.width);
+        if (sizeWidth < 1000) {
+            sizeWidth += 50;
+            }
+        else {
+            sizeWidth = 100;
+            }
+        block2.style.width = sizeWidth + 'px';
+        }
+        function filter() {
+            let color = document.getElementById('wear-color').value
+            let type = document.getElementById('wear-type').value
+            let wear = document.getElementById('wear')
+
+            if(color =='Красный' && type == 'Футболка') {
+                wear.src = 'red-f.jpg'
+            }
+            if(color =='Красный' && type == 'Майка') {
+                wear.src = 'red-m.jpg'
+            }
+            if(color =='Красный' && type == 'Поло') {
+                wear.src = 'red-p.jpg'
+            }
+
+            if(color =='Белый' && type == 'Футболка') {
+                wear.src = 'white-f.jpg'
+            }
+            if(color =='Белый' && type == 'Майка') {
+                wear.src = 'white-m.jpg'
+            }
+            if(color =='Белый' && type == 'Поло') {
+                wear.src = 'white-p.jpg'
+            }
+            if(color =='Чёрный' && type == 'Футболка') {
+                wear.src = 'black-f.jpg'
+            }
+            if(color =='Чёрный' && type == 'Майка') {
+                wear.src = 'black-m.jpg'
+            }
+            if(color =='Чёрный' && type == 'Поло') {
+                wear.src = 'black-p.jpg'
+            }
+            
+        }
+        
+             
+        
+
+       
+       
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    <main>
+        <div class="game">
+            <button onclick="startGame()">
+                Сыграть в игру
+            </button>
+        </div>
+        <div class="game" style="display: none;">
+            <h1> Угадай число! </h1>
+            <div>
+                Задумано число от 1 до 100. Угадайте, какое?<br>
+                <input type="number" value="" min="1" max="100" id="user-number"><br>
+                <button onclick="guess()"> Угадать</button>
+                <div id="result"></div>
+            </div>
+        </div>
+        <div class="game" style="display:none;">
+            <h1>Поздравляем, вы выиграли!</h1>
+            <div>
+                 Задуманное число: <span id="number"></span>
+            </div>
+            <div>
+                 Количество попыток: <span id="try-count"></span>
+            </div>
+            <div>
+                 <button onclick="again()">Сыграть еще раз</button>
+            </div>
+        </div>
+        <br>
+        <div class="rules">
+            <button onclick="showRules()">Показать правила игры</button>
+        </div>
+        <div class="rules"style="display: none; height: 265px; color:black">
+            <button onclick="closeRules()">Скрыть правила игры</button>
+            <ol>
+                <li>Тщательно подготовиться к игре</li>
+                <li>Выбрать число</li>
+                <li>Нажать на кнопку угадать</li>
+                <li>Проверить себя</li>
+                <li>Попробовать еще раз</li>
+            </ol>
+        </div>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name"> зеленый</span><br>
+            Сделайте двойной щелчок,чтобы сменить.
+        </div>
+        <div class="guad" id="block" ondblclick="right()"> Щелкни меня </div>
+        <div id="block2" onclick="big()"> нажми, чтобы я стал шире</div>
+        <div>
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Чёрный</option>
+            </select><br>
+
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter()">ОК</button><br>
+
+            <img id="wear" height="500" width="500">
+        </div>
+    </div>
+ </main>
+    <footer>
+        &copy; Давоян Карине Горовна, ФБИ-11, 2 курс, 2023
+    </footer>
+    
+</body>
+</html>
