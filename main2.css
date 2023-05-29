@@ -1,0 +1,56 @@
+.video {
+    position:relative;
+    padding-bottom: 56.25%;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+}
+.video__media {
+    width: 100%;
+    height:auto;
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+    z-index: -1;
+}
+a{
+    display:inline-block;
+    font-size: 20px;
+    margin-right: -40px;
+    color: rgb(83, 81, 81);
+    padding-left: 70px;
+    padding-top: -100px;
+    z-index: 5;
+    }
+a:hover {
+    color: rgb(71, 138, 200);
+    z-index: 5;
+    
+    }
+footer {
+    padding:10px;
+    font-size:10pt;
+    position:fixed;
+    left:0;
+    bottom:0;
+    right:0;
+    text-align:right;
+    color: rgb(100, 100, 103);
+    background-color: rgb(214, 214, 220);
+    z-index: 5;
+}
+header {
+    background-color:white;
+    padding: 20px; 
+    font-size: 20pt; 
+    font-weight: bold;
+    margin-left:170px; 
+    margin-right: 500px; 
+    margin-top: 40px; 
+    position: fixed; 
+    z-index:1; 
+    overflow: hidden;
+    width: 75%;
+     float: left;
+}
