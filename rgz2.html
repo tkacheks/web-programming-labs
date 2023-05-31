@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Давоян Карине Горовна, Расчетно-графическая работа </title>
+    <link rel="stylesheet" href="main2.css">
+   
+
+</head>
+<style>
+    
+        div  {
+         font-size: 20px;
+         text-align: center;
+         text-indent: 1.25cm;
+         line-height: 150%;
+         font-family: monospace;
+         color: rgb(83, 81, 81); 
+          
+            
+        }
+        
+</style>
+<script>
+    function rezfinance() {
+    let data = ["28.04.2023", "27.04.2023", "26.04.2023", "25.04.2023", "24.04.2023", "21.04.2023", 
+                "20.04.2023", "19.04.2023", "18.04.2023", "17.04.2023", "14.04.2023", "13.04.2023",
+                "12.04.2023", "11.04.2023", "10.04.2023", "07.04.2023", "06.04.2023", "05.04.2023",
+                "04.04.2023", "03.04.2023"];
+
+    let price = [9.33, 9.30, 9.32, 9.31, 9.26, 
+                 9.28, 9.30, 9.22, 9.20, 9.18, 
+                 9.16, 9.17, 9.15, 9.11, 9.10, 
+                 9.04, 9.06, 9.07, 8.98, 8.99];
+
+    let table = document.getElementById("table1");
+        for(let i = 0; i < price; i++) {
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            td2.innerHTML = price[i];
+            td1.innerHTML = data[i];
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            table.appendChild(tr);
+    }
+    let max = document.getElementById("max");
+    let min = document.getElementById("min");
+    let sum = 0;
+    max.innerHTML = "Максимальное значение: " + Math.max.apply(0, price);
+    min.innerHTML = "Минимальное значение: " + Math.min.apply(0, price);
+
+    for(i = 0; i < price.length; i++) {
+        sum = sum + price[i];
+    }
+
+    let average = sum / 20;
+    let sumkvadrat = 0;
+    
+    for(let i = 0; i < price.length; i++){
+        sumkvadrat = sumkvadrat + (price[i] - average)**2;
+    }
+
+    let otklon = Math.sqrt(sumkvadrat / 20);
+    let final = document.getElementById("otklon")
+    final.innerHTML = "Среднеквадратическое отклонение: " + otklon.toFixed(2);
+    rezfinance()
+    
+}
+</script>
+<body onload="rezfinance()" >
+    <main style="z-index:1; position:absolute" >
+        <p style="margin-top: -1200; z-index: 8;position: absolute; margin-left: 430px;padding-top: 152px;">
+            <a  href="https://t.me/onlineretailgroup" target=" blank"> <img src="channels4_profile (1).png" style="width: 3%" ></a>
+        </p>
+       
+       
+        <div style="color: rgb(83, 81, 81);background-color: white;z-index: 8;margin-top: 300px; width: 1000px; margin-left: 226px;"  ><h2>  Финансовые показатели за 2021-2022 гг. по МСФО</h2> 
+        <p style="text-align: left;  color: rgb(83, 81, 81);">
+        Выручка, млн руб: <br>
+        
+        <span style="text-align: left; color: black; background-color: rgb(244, 128, 128); width:220px;margin-left: 45px;" > 2021г.= 10 772 </span> <br>
+        <span  style="width:220px; color: black;background-color:rgb(244, 128, 128) ;  margin-left: 45px; text-align: left;">2022г. = 13702 </span> <br><br>
+        
+        <span style="text-align: left; color: rgb(83, 81, 81);margin-left: 45px; ">EBITDA, млн руб.</span><br>
+        <span style="text-align: left; color: black; background-color: rgb(244, 128, 128); width:220px;margin-left: 45px;" > 2021г.= 2302 </span> <br>
+        <span  style="width:220px; color: black;background-color:rgb(244, 128, 128) ;  margin-left: 45px; text-align: left;">2022г. = 3583 </span> <br><br>     
+
+        <span style="text-align: left; color: rgb(83, 81, 81);margin-left: 45px; ">Чистая прибыль, млн руб.</span><br>
+        <span style="text-align: left; color: black; background-color: rgb(244, 128, 128); width:220px;margin-left: 45px;" > 2021г.= 563 </span> <br>
+        <span  style="width:220px; color: black;background-color:rgb(244, 128, 128) ;  margin-left: 45px; text-align: left;">2022г. = 1687 </span> <br><br>
+
+        <span style="text-align: left; color: rgb(83, 81, 81);margin-left: 45px; ">Число акций ао МСФО,млн</span><br>
+        <span style="text-align: left; color: black; background-color: rgb(244, 128, 128); width:220px;margin-left: 45px;" > 2021г.= 113.1 </span> <br><br><br> </p>
+
+        </div>
+        <div style="color:rgb(83, 81, 81); background-color: white;width: 1000px; margin-left: 226px;" ><h3>Цены акций за апрель</h3></div>
+  
+        <div><table border="1" id="table1" align="center"  style="color:black ; background-color: rgb(200, 235, 242); margin-left:230px; width: 1000px; border: 2px dashed rgb(21, 13, 247)">
+            <tr>
+                <td>28.04</td>
+                <td>9.33</td>
+            </tr>
+            <tr>
+                <td>27.04</td>
+                <td>9.30</td>
+            </tr>
+            <tr>
+                <td>26.04</td>
+                <td>9.32</td>
+            </tr>
+            <tr>
+                <td>25.04</td>
+                <td>9.31</td>
+            </tr>
+            <tr>
+                <td>24.04</td>
+                <td>9.26</td>
+            </tr>
+            <tr>
+                <td>21.04</td>
+                <td>9.28</td>
+            </tr>
+            <tr>
+                <td>20.04</td>
+                <td>9.30</td>
+            </tr>
+            <tr>
+                <td>19.04</td>
+                <td>9.22</td>
+            </tr>
+            <tr>
+                <td>18.04</td>
+                <td>9.20</td>
+            </tr>
+            <tr>
+                <td>17.04</td>
+                <td>9.18</td>
+            </tr>
+            <tr>
+                <td>14.04</td>
+                <td>9.16</td>
+            </tr>
+            <tr>
+                <td>13.04</td>
+                <td>9.17</td>
+            </tr>
+            <tr>
+                <td>12.04</td>
+                <td>9.15</td>
+            </tr>
+            <tr>
+                <td>11.04</td>
+                <td>9.11</td>
+            </tr>
+            <tr>
+                <td>10.04</td>
+                <td>9.10</td>
+            </tr>
+            <tr>
+                <td>07.04</td>
+                <td>9.04</td>
+            </tr>
+            <tr>
+                <td>06.04</td>
+                <td>9.06</td>
+            </tr>
+            <tr>
+                <td>05.04</td>
+                <td>9.07</td>
+            </tr>
+            <tr>
+                <td>04.04</td>
+                <td>8.98</td>
+            </tr>
+            <tr>
+                <td>03.04</td>
+                <td>8/99</td>
+            </tr>
+            
+
+        
+        
+        </table><br>
+        <div style="display: inline-flex; text-align: center;z-index: 8; position: relative;" >
+            <div id="otklon" ></div>
+            <div id="max" ></div>
+            <div id="min" ></div>
+        </div>
+        <br> <br><br>
+        <div style= "margin-left: 180px;margin-top: -1590px;z-index: 8;position: absolute; color: white;font-size: 15px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"">
+            <p> Главная / Финансовые показатели /</p>
+          
+        </div>
+
+
+    </div>
+    </main>
+
+
+    <header >
+        <img src="лого.png" style="width: 10% ; margin-left: 100px;"  >  
+        <a href="rgz.html" > О компании</a>  
+        <a href="rgz2.html" style="color: rgb(229, 24, 24); "  >Финансовые показатели</a>
+        <a href="rgz3.html" > Контакты</a>
+        <a href="rgz4.html" > Видео</a> 
+   
+    </header>
+    
+<div class="video">
+    <video class="video__media" src="обувь (online-video-cutter.com).mp4" autoplay muted loop  ></video>
+</div>
+
+<footer >
+    &copy; 2023 OR GROUP
+</footer>
+</body>
+
+</html>
