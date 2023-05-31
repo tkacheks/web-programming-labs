@@ -36,6 +36,8 @@ function showDate()   {
     outtttttt.innerHTML = "Дата и время для Франции:  " + todayyyyyyy.toLocaleString('fr');
 }
 
+
+
     
 
 
