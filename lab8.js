@@ -42,6 +42,12 @@ function showDaysCount() {
     let daysCount = (today - birthday)/1000/60/60/24;
     
 }
+function showTime() {
+    let today = new Date();
+    let currentTime = today.toLocaleTimeString('ru-RU');
+    document.getElementById('time').innerHTML = currentTime;
+}
+setInterval(showTime,1000);
 
 
 
